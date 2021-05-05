@@ -101,7 +101,7 @@ func (l *Listener) Addr() net.Addr {
 
 // Dial creates a new connection within the Listener so that it is
 // possible to initate communications over the UDP PacketConn
-func (l *Listener) Dial(raddr net.Addr) (*Conn, error) {
+func (l *Listener) Dial(raddr net.Addr) (net.Conn, error) {
 	l.connLock.Lock()
 	defer l.connLock.Unlock()
 
